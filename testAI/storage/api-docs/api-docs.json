@@ -1,0 +1,108 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "TestAI Feedback API",
+        "description": "REST API формы обратной связи с AI-анализом тональности",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://my-default-host.com",
+            "description": "API"
+        }
+    ],
+    "paths": {
+        "/api/contact": {
+            "post": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "Отправка формы обратной связи",
+                "operationId": "091364660aac946c17e7253400cb3f89",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "phone",
+                                    "email",
+                                    "comment"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Иван Иванов"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+79991234567"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "ivan@example.com"
+                                    },
+                                    "comment": {
+                                        "type": "string",
+                                        "example": "Уточните условия доставки"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Обращение принято"
+                    },
+                    "422": {
+                        "description": "Ошибка валидации"
+                    },
+                    "429": {
+                        "description": "Превышен лимит запросов"
+                    }
+                }
+            }
+        },
+        "/api/health": {
+            "get": {
+                "tags": [
+                    "Status"
+                ],
+                "summary": "Проверка статуса сервиса",
+                "operationId": "7805ca78da88fd33039d6c319db0dd65",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/metrics": {
+            "get": {
+                "tags": [
+                    "Status"
+                ],
+                "summary": "Статистика обращений",
+                "operationId": "24ecb7d95d6f47d14985ac46abdc9b00",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Contact",
+            "description": "Contact"
+        },
+        {
+            "name": "Status",
+            "description": "Status"
+        }
+    ]
+}

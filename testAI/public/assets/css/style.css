@@ -1,0 +1,113 @@
+ * {
+     padding: 0;
+     margin: 0;
+     text-decoration: none;
+     outline: none;
+     box-sizing: border-box;
+ }
+
+ body {
+     margin: 0;
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: radial-gradient(circle at 20% 20%, #1c2333, #0b0e16 70%);
+     font-family: -apple-system, Inter, sans-serif;
+     color: #eceaf5;
+ }
+
+ .card {
+     width: min(420px, 92vw);
+     background: rgba(255, 255, 255, 0.04);
+     border: 1px solid rgba(255, 255, 255, 0.08);
+     backdrop-filter: blur(16px);
+     border-radius: 16px;
+     padding: 2.2rem;
+ }
+
+ h1 {
+     font-size: 1.4rem;
+     margin: 0 0 1.4rem;
+ }
+
+ label {
+     display: block;
+     font-size: 0.82rem;
+     color: #9aa0b4;
+     margin: 1rem 0 0.35rem;
+ }
+
+ input,
+ textarea {
+     width: 100%;
+     padding: 0.7em 0.9em;
+     border-radius: 8px;
+     border: 1px solid rgba(255, 255, 255, 0.12);
+     background: rgba(255, 255, 255, 0.03);
+     color: #eceaf5;
+     font-family: inherit;
+     font-size: 0.94rem;
+ }
+
+ input::placeholder,
+ textarea::placeholder {
+     font-size: 12px !important;
+ }
+
+ textarea {
+     min-height: 90px;
+     resize: vertical;
+ }
+
+ button {
+     margin-top: 1.5rem;
+     width: 100%;
+     padding: 0.85em;
+     border: none;
+     border-radius: 8px;
+     background: #5fd4c4;
+     color: #0b0e16;
+     font-weight: 600;
+     cursor: pointer;
+     font-size: 0.95rem;
+ }
+
+ button:disabled {
+     opacity: 0.6;
+     cursor: default;
+ }
+
+ .msg {
+     margin-top: 1rem;
+     font-size: 0.86rem;
+     padding: 0.7em 0.9em;
+     border-radius: 8px;
+     display: none;
+ }
+
+ .msg.ok {
+     display: block;
+     background: rgba(95, 212, 196, 0.14);
+     color: #5fd4c4;
+ }
+
+ .msg.err {
+     display: block;
+     background: rgba(255, 120, 120, 0.14);
+     color: #ff9b9b;
+ }
+
+ .badges {
+     margin-top: 0.6rem;
+     display: flex;
+     gap: 0.5rem;
+     flex-wrap: wrap;
+ }
+
+ .badge {
+     font-size: 0.74rem;
+     padding: 0.25em 0.6em;
+     border-radius: 999px;
+     background: rgba(255, 255, 255, 0.08);
+ }
