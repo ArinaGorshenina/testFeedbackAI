@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обратная связь</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.min.js"></script>
 </head>
 
 <body>
-    <form class="card" id="contactForm">
+    <form class="card" id="contactForm" method="POST">
+        @csrf
         <h1>Напишите нам</h1>
 
         <div class="form-content">
@@ -17,7 +20,7 @@
             <input type="text" name="name" placeholder="Введите имя" required>
 
             <label>Телефон</label>
-            <input type="tel" name="phone" placeholder="Введите телефон" required>
+            <input type="tel" placeholder="+7 (___) ___-____" name="phone" class="phone-mask" required>
 
             <label>Email</label>
             <input type="email" name="email" placeholder="Введите почту" required>

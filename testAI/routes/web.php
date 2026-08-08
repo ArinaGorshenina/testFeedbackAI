@@ -6,4 +6,3 @@ Route::get('/', function () {
     return view('contact');
 });
 Route::view('/contact-demo', 'contact');
-
